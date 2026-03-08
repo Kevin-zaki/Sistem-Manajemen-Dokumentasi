@@ -1,0 +1,331 @@
+@model latihan.Models.ProfileModel
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+    :root {
+        --brand-dark: #1e293b;
+        --brand-indigo: #6366f1;
+        --brand-success: #10b981;
+        --text-elegant: #334155;
+        --text-sub: #64748b;
+        --border-soft: #e2e8f0;
+        --bg-body: #f1f5f9;
+        --card-bg: #ffffff;
+        --input-bg: #f8fafc;
+    }
+
+    body {
+        background: var(--bg-body);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--text-elegant);
+        letter-spacing: -0.01em;
+    }
+
+    .form-container { 
+        max-width: 800px; 
+        margin: 40px auto; 
+    }
+
+    .glass-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-soft);
+        border-radius: 20px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+    }
+
+    .card-header-custom {
+        background: var(--brand-dark);
+        padding: 24px 35px;
+        color: #f1f5f9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-header-custom h6 {
+        font-weight: 700;
+        font-size: 1rem;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* --- FORM ELEMENTS --- */
+    .form-label {
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-elegant);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .input-group-custom {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-icon-wrapper {
+        position: absolute;
+        left: 18px;
+        color: var(--text-sub);
+        font-size: 1.1rem;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+
+    .custom-input {
+        border: 2px solid var(--border-soft);
+        border-radius: 12px;
+        padding: 12px 18px 12px 50px;
+        font-size: 0.95rem;
+        width: 100%;
+        background: var(--input-bg);
+        transition: all 0.2s ease;
+        color: var(--brand-dark);
+    }
+
+    .custom-input:focus {
+        background: white;
+        border-color: var(--brand-indigo);
+        box-shadow: none;
+        outline: none;
+    }
+
+    .custom-input:focus + .input-icon-wrapper {
+        color: var(--brand-indigo);
+    }
+
+    /* --- TEXT EDITOR AREA --- */
+    .editor-wrapper {
+        border: 2px solid var(--border-soft);
+        border-radius: 12px;
+        overflow: hidden;
+        background: white;
+        transition: 0.3s ease;
+    }
+
+    .editor-wrapper:focus-within {
+        border-color: var(--brand-indigo);
+    }
+
+    .editor-toolbar {
+        background: #f8fafc;
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex; 
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .t-btn {
+        width: 32px; 
+        height: 32px; 
+        border: none; 
+        background: transparent;
+        border-radius: 6px; 
+        color: var(--text-sub); 
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .t-btn:hover { 
+        background: var(--border-soft); 
+        color: var(--brand-indigo); 
+    }
+
+    .v-divider {
+        width: 1px;
+        height: 20px;
+        background: var(--border-soft);
+        margin: 0 6px;
+    }
+
+    #editor {
+        min-height: 200px; 
+        padding: 20px; 
+        outline: none; 
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--brand-dark);
+    }
+
+    /* --- BUTTONS --- */
+    .btn-save {
+        background: var(--brand-dark);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        transition: 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-save:hover { 
+        background: #000; 
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn-cancel {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-sub);
+        text-decoration: none;
+        background: #ffffff;
+        border: 1px solid var(--border-soft);
+        transition: 0.2s;
+    }
+
+    .btn-cancel:hover {
+        background: #f1f5f9;
+        color: var(--brand-dark);
+        border-color: #cbd5e1;
+    }
+
+    .form-text-custom {
+        font-size: 0.75rem;
+        margin-top: 8px;
+        color: var(--text-sub);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .setup-tag {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: white;
+    }
+</style>
+
+<div class="container form-container">
+    <div class="glass-card">
+        <div class="card-header-custom">
+            <h6><i class="bi bi-sliders2 me-2"></i>Konfigurasi Beranda</h6>
+            <span class="setup-tag text-uppercase">System Config</span>
+        </div>
+
+        <div class="card-body p-4 p-lg-5">
+            <form asp-action="EditProfile" method="post" id="profileForm">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-4">
+                    <label class="form-label">Nama Perusahaan / Judul Utama</label>
+                    <div class="input-group-custom">
+                        <input asp-for="Name" class="form-control custom-input fw-bold" placeholder="Contoh: PT SEPATU MAS IDAMAN" required />
+                        <div class="input-icon-wrapper">
+                            <i class="bi bi-building"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Tagline / Sub-judul</label>
+                    <div class="input-group-custom">
+                        <input asp-for="Title" class="form-control custom-input" placeholder="Contoh: Digital Library & Documentation System" required />
+                        <div class="input-icon-wrapper">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Kategori Utama (Pisahkan dengan koma)</label>
+                    <div class="input-group-custom">
+                        <input asp-for="Skills" class="form-control custom-input" placeholder="Produksi, HRD, K3, QC" />
+                        <div class="input-icon-wrapper">
+                            <i class="bi bi-tags"></i>
+                        </div>
+                    </div>
+                    <div class="form-text-custom">
+                        <i class="bi bi-info-circle"></i> Gunakan tanda koma untuk memisahkan kategori.
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <label class="form-label">Visi & Misi Platform (Deskripsi)</label>
+                    <div class="editor-wrapper">
+                        <div class="editor-toolbar">
+                            <button type="button" class="t-btn" onclick="execCmd('bold')" title="Tebal"><i class="bi bi-type-bold"></i></button>
+                            <button type="button" class="t-btn" onclick="execCmd('italic')" title="Miring"><i class="bi bi-type-italic"></i></button>
+                            <button type="button" class="t-btn" onclick="execCmd('underline')" title="Garis Bawah"><i class="bi bi-type-underline"></i></button>
+                            
+                            <div class="v-divider"></div>
+                            
+                            <button type="button" class="t-btn" onclick="execCmd('insertUnorderedList')" title="Bullet List"><i class="bi bi-list-ul"></i></button>
+                            <button type="button" class="t-btn" onclick="execCmd('insertOrderedList')" title="Numbered List"><i class="bi bi-list-ol"></i></button>
+                            
+                            <div class="v-divider"></div>
+
+                            <button type="button" class="t-btn" onclick="execCmd('justifyLeft')" title="Rata Kiri"><i class="bi bi-justify-left"></i></button>
+                            <button type="button" class="t-btn" onclick="execCmd('justifyCenter')" title="Rata Tengah"><i class="bi bi-justify-control"></i></button>
+                            
+                            <div class="v-divider"></div>
+
+                            <button type="button" class="t-btn text-danger ms-auto" onclick="execCmd('removeFormat')" title="Hapus Format"><i class="bi bi-eraser"></i></button>
+                        </div>
+                        <div id="editor" contenteditable="true">@Html.Raw(Model.AboutMe)</div>
+                    </div>
+                    <input type="hidden" asp-for="AboutMe" id="AboutMeInput" />
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center pt-4 border-top">
+                    <a asp-action="Dashboard" class="btn-cancel">
+                        <i class="bi bi-arrow-left"></i>
+                        <span>Batal</span>
+                    </a>
+                    
+                    <button type="submit" class="btn btn-save shadow-sm">
+                        Simpan Konfigurasi <i class="bi bi-check-circle ms-1"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // Fungsi untuk menjalankan perintah format teks
+    function execCmd(cmd) {
+        document.execCommand(cmd, false, null);
+        document.getElementById('editor').focus();
+    }
+
+    // Sinkronisasi konten editor ke input hidden sebelum submit
+    document.getElementById('profileForm').onsubmit = function() {
+        const editor = document.getElementById('editor');
+        const hiddenInput = document.getElementById('AboutMeInput');
+        
+        // Pindahkan isi HTML ke hidden input agar terikat ke Model.AboutMe
+        hiddenInput.value = editor.innerHTML;
+        
+        // Validasi minimal (opsional)
+        if (editor.innerText.trim() === "") {
+            Swal.fire('Perhatian', 'Deskripsi Visi & Misi tidak boleh kosong', 'warning');
+            return false;
+        }
+    };
+</script>

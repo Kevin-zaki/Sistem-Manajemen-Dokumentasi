@@ -1,0 +1,293 @@
+@model latihan.Models.Post
+
+@{
+    ViewData["Title"] = "Edit Instruksi Kerja";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+    :root {
+        --brand-dark: #1e293b;
+        --brand-indigo: #6366f1;
+        --brand-success: #10b981;
+        --text-elegant: #334155;
+        --text-sub: #64748b;
+        --border-soft: #e2e8f0;
+        --bg-body: #f1f5f9;
+        --card-bg: #ffffff;
+        --input-bg: #f8fafc;
+    }
+
+    body {
+        background: var(--bg-body);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--text-elegant);
+        letter-spacing: -0.01em;
+    }
+
+    .form-container { max-width: 850px; margin: 40px auto; }
+
+    .glass-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-soft);
+        border-radius: 20px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+    }
+
+    .card-header-custom {
+        background: var(--brand-dark);
+        padding: 24px 35px;
+        color: #f1f5f9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-header-custom h6 {
+        font-weight: 700; font-size: 1rem; margin: 0;
+        text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    .form-label {
+        font-weight: 700; font-size: 0.75rem; text-transform: uppercase;
+        letter-spacing: 0.05em; color: var(--text-elegant); margin-bottom: 10px;
+        display: flex; align-items: center; gap: 8px;
+    }
+
+    .custom-input {
+        border: 2px solid var(--border-soft);
+        border-radius: 12px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        width: 100%;
+        background: var(--input-bg);
+        transition: all 0.2s ease;
+        color: var(--brand-dark);
+    }
+
+    .custom-input:focus {
+        background: white; border-color: var(--brand-indigo); outline: none;
+    }
+
+    /* --- EDITOR AREA (FOCUS AREA) --- */
+    .editor-wrapper {
+        border: 2px solid var(--border-soft);
+        border-radius: 12px;
+        overflow: hidden;
+        background: white;
+        transition: 0.3s ease;
+    }
+
+    .editor-wrapper:focus-within {
+        border-color: var(--brand-indigo);
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    }
+
+    .editor-toolbar {
+        background: #f8fafc;
+        padding: 10px;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex; 
+        gap: 2px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .t-btn {
+        width: 34px; 
+        height: 34px; 
+        border: none; 
+        background: transparent;
+        border-radius: 6px; 
+        color: var(--text-sub); 
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    .t-btn:hover { 
+        background: var(--border-soft); 
+        color: var(--brand-indigo); 
+    }
+
+    .t-btn.active {
+        background: #e0e7ff;
+        color: var(--brand-indigo);
+    }
+
+    .v-divider {
+        width: 1px;
+        height: 20px;
+        background: var(--border-soft);
+        margin: 0 8px;
+    }
+
+    #editor {
+        min-height: 350px; 
+        padding: 25px; 
+        outline: none; 
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* --- END EDITOR AREA --- */
+
+    .status-group {
+        display: flex; gap: 10px; background: var(--input-bg);
+        padding: 6px; border-radius: 12px; border: 2px solid var(--border-soft);
+    }
+
+    .status-item { flex: 1; }
+    .btn-check { display: none; }
+    .status-label {
+        display: block; text-align: center; padding: 10px; border-radius: 8px;
+        cursor: pointer; font-size: 0.8rem; font-weight: 700; color: var(--text-sub);
+        transition: 0.3s; margin: 0;
+    }
+
+    .btn-check:checked + .label-active { background: white; color: var(--brand-success); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .btn-check:checked + .label-draft { background: white; color: #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+    .btn-save {
+        background: var(--brand-dark); color: white; border: none;
+        padding: 12px 28px; border-radius: 10px; font-weight: 700;
+        transition: 0.3s; display: inline-flex; align-items: center; gap: 10px;
+    }
+
+    .btn-save:hover { background: #000; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+</style>
+
+<div class="container form-container">
+    <div class="glass-card">
+        <div class="card-header-custom">
+            <h6><i class="bi bi-pencil-square me-2"></i>Edit Instruksi Kerja</h6>
+            <span class="badge" style="background: rgba(255,255,255,0.1)">ID: @Model.Id</span>
+        </div>
+
+        <div class="card-body p-4 p-lg-5">
+            <form asp-action="EditPost" method="post" id="mainForm">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="CreatedAt" />
+                <input type="hidden" asp-for="ThumbnailUrl" />
+
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <label class="form-label">Judul Instruksi Kerja</label>
+                        <input asp-for="Title" class="form-control custom-input fw-bold" placeholder="Masukkan judul..." required />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Status Dokumen</label>
+                        <div class="status-group">
+                            <div class="status-item">
+                                <input type="radio" asp-for="IsActive" value="true" class="btn-check" id="st1">
+                                <label class="status-label label-active" for="st1"><i class="bi bi-check-circle-fill me-1"></i> Terbit</label>
+                            </div>
+                            <div class="status-item">
+                                <input type="radio" asp-for="IsActive" value="false" class="btn-check" id="st2">
+                                <label class="status-label label-draft" for="st2"><i class="bi bi-pause-circle-fill me-1"></i> Draft</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Isi Detail Instruksi</label>
+                    <div class="editor-wrapper">
+                        <div class="editor-toolbar">
+                            <button type="button" class="t-btn" onclick="exec('bold')" title="Tebal"><i class="bi bi-type-bold"></i></button>
+                            <button type="button" class="t-btn" onclick="exec('italic')" title="Miring"><i class="bi bi-type-italic"></i></button>
+                            <button type="button" class="t-btn" onclick="exec('underline')" title="Garis Bawah"><i class="bi bi-type-underline"></i></button>
+                            <button type="button" class="t-btn" onclick="exec('strikeThrough')" title="Coret"><i class="bi bi-type-strikethrough"></i></button>
+                            
+                            <div class="v-divider"></div>
+                            
+                            <button type="button" class="t-btn" onclick="exec('justifyLeft')" title="Rata Kiri"><i class="bi bi-justify-left"></i></button>
+                            <button type="button" class="t-btn" onclick="exec('justifyCenter')" title="Rata Tengah"><i class="bi bi-justify-control"></i></button>
+                            <button type="button" class="t-btn" onclick="exec('justifyRight')" title="Rata Kanan"><i class="bi bi-justify-right"></i></button>
+                            
+                            <div class="v-divider"></div>
+                            
+                            <button type="button" class="t-btn" onclick="exec('insertUnorderedList')" title="Bullet List"><i class="bi bi-list-ul"></i></button>
+                            <button type="button" class="t-btn" onclick="exec('insertOrderedList')" title="Numbered List"><i class="bi bi-list-ol"></i></button>
+                            
+                            <div class="v-divider"></div>
+                            
+                            <button type="button" class="t-btn" onclick="exec('outdent')" title="Kurangi Indent"><i class="bi bi-text-indent-left"></i></button>
+                            <button type="button" class="t-btn" onclick="exec('indent')" title="Tambah Indent"><i class="bi bi-text-indent-right"></i></button>
+                            
+                            <div class="v-divider"></div>
+                            
+                            <button type="button" class="t-btn text-danger" onclick="exec('removeFormat')" title="Hapus Semua Format"><i class="bi bi-eraser"></i></button>
+                        </div>
+                        
+                        <div id="editor" contenteditable="true">@Html.Raw(Model.Content)</div>
+                    </div>
+                    <input type="hidden" asp-for="Content" id="ContentInput" />
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-md-4">
+                        <label class="form-label">Urutan Tampilan</label>
+                        <input asp-for="DisplayOrder" type="number" class="form-control custom-input" required />
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center pt-4 border-top">
+                    <a asp-action="Dashboard" class="btn-cancel" style="text-decoration:none; color: var(--text-sub); font-weight: 600;">
+                        <i class="bi bi-arrow-left"></i> Batal
+                    </a>
+                    <button type="submit" class="btn-save shadow-sm">
+                        Simpan Perubahan <i class="bi bi-check-circle ms-1"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Fungsi eksekusi perintah format teks
+        function exec(cmd, value = null) {
+            document.execCommand(cmd, false, value);
+            document.getElementById('editor').focus();
+        }
+
+        // Sinkronisasi konten sebelum form dikirim
+        document.getElementById('mainForm').onsubmit = function() {
+            const editor = document.getElementById('editor');
+            const hiddenInput = document.getElementById('ContentInput');
+            
+            // Validasi konten kosong
+            if (editor.innerText.trim() === "" && editor.querySelectorAll('img').length === 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Konten Kosong',
+                    text: 'Silahkan isi detail instruksi kerja sebelum menyimpan.',
+                    confirmButtonColor: '#6366f1'
+                });
+                return false;
+            }
+            
+            hiddenInput.value = editor.innerHTML;
+        };
+
+        // Handler Notifikasi Error dari Server
+        @if (TempData["Error"] != null) {
+            <text>
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal',
+                text: '@TempData["Error"]',
+                confirmButtonColor: '#6366f1'
+            });
+            </text>
+        }
+    </script>
+}

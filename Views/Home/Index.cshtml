@@ -1,0 +1,271 @@
+﻿@model latihan.Models.ProfileModel
+@{
+    var recentDocs = ViewBag.RecentDocs as List<latihan.Models.Post>;
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+    :root {
+        --brand-dark: #1e293b;
+        --brand-indigo: #6366f1;
+        --text-elegant: #475569;
+        --border-soft: #e2e8f0;
+        --bg-body: #f1f5f9; /* Slate 100 */
+    }
+
+    body {
+        background-color: var(--bg-body);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--text-elegant);
+        letter-spacing: -0.01em;
+        padding-top: 30px;
+        padding-bottom: 60px;
+    }
+
+    /* --- FULL WIDTH ADJUSTMENT --- */
+    .container-full {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    /* UTILITY BAR - Glassmorphism Light */
+    .utility-bar {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 12px 24px;
+        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    /* HEADER TYPOGRAPHY */
+    .header-content { 
+        margin-bottom: 50px; 
+    }
+    
+    .brand-accent {
+        height: 4px;
+        width: 40px;
+        background: var(--brand-indigo);
+        margin-bottom: 18px;
+        border-radius: 10px;
+    }
+
+    .header-content h1 {
+        font-weight: 800;
+        font-size: 2.6rem;
+        letter-spacing: -0.04em;
+        color: var(--brand-dark);
+        margin-bottom: 8px;
+    }
+
+    .header-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-elegant);
+        font-weight: 500;
+        opacity: 0.8;
+    }
+
+    /* DASHBOARD BUTTON */
+    .btn-dashboard {
+        background: var(--brand-dark);
+        color: white !important;
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .btn-dashboard:hover {
+        background: #000;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* MENU CARDS */
+    .menu-card {
+        background: white;
+        border-radius: 24px;
+        padding: 40px;
+        height: 100%;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border: 1px solid var(--border-soft);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    }
+
+    .menu-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+        border-color: var(--brand-indigo);
+    }
+
+    .icon-box {
+        width: 50px; height: 50px;
+        background: #f8fafc;
+        border-radius: 14px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+        color: var(--brand-dark);
+        transition: 0.3s;
+    }
+
+    .menu-card:hover .icon-box {
+        background: var(--brand-dark);
+        color: white;
+    }
+
+    .menu-card h3 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--brand-dark);
+        margin-bottom: 12px;
+    }
+
+    .menu-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-elegant);
+        margin-bottom: 0;
+        opacity: 0.8;
+    }
+
+    /* INFO BOX - Modern Statement */
+    .info-box {
+        background: white;
+        border-radius: 28px;
+        padding: 50px;
+        margin-top: 60px;
+        border: 1px solid var(--border-soft);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .label-small {
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--brand-indigo);
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .tag {
+        background: #f1f5f9;
+        padding: 6px 16px;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--brand-dark);
+        border: 1px solid var(--border-soft);
+        transition: 0.2s;
+    }
+
+    .mission-text {
+        color: var(--brand-dark);
+        font-size: 1.15rem;
+        line-height: 1.8;
+        font-weight: 500;
+    }
+
+    .update-pill {
+        background: #fdf2f8; /* Pink tint */
+        color: #db2777;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+
+</style>
+
+<div class="container-full">
+    <div class="utility-bar">
+        <div class="d-flex align-items-center gap-3">
+            <span class="badge" style="background: var(--brand-dark); font-size: 0.65rem; letter-spacing: 1px; padding: 6px 12px;">PROYEK SMI</span>
+            @if (recentDocs != null && recentDocs.Any()) {
+                @foreach (var doc in recentDocs.Take(1)) {
+                    <span class="small d-none d-md-inline-block fw-600" style="font-size: 0.8rem; color: var(--text-elegant);">
+                        <span class="update-pill me-2">NEW UPDATE</span> @doc.Title
+                    </span>
+                }
+            }
+        </div>
+        <div class="small fw-700" style="font-size: 0.8rem; color: var(--brand-dark);">
+            <i class="bi bi-calendar3 me-1"></i> @DateTime.Now.ToString("dd MMM yyyy")
+        </div>
+    </div>
+
+    <div class="header-content d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-4">
+        <div>
+            <div class="brand-accent"></div>
+            <h1>@Model.Name</h1>
+            <p class="header-subtitle">@Model.Title</p>
+        </div>
+        <a href="/Docs" class="btn-dashboard">
+            Mulai Eksplorasi <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+            <a href="/Docs" class="menu-card">
+                <div class="icon-box"><i class="bi bi-diagram-3"></i></div>
+                <h3>Alur Operasional</h3>
+                <p>Dokumentasi lengkap mengenai proses bisnis dan alur kerja di tiap departemen produksi.</p>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <a href="/Docs" class="menu-card">
+                <div class="icon-box"><i class="bi bi-shield-check"></i></div>
+                <h3>Keamanan & K3</h3>
+                <p>Pusat informasi standar keselamatan kerja dan prosedur tanggap darurat perusahaan.</p>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <a href="/Docs" class="menu-card">
+                <div class="icon-box"><i class="bi bi-journal-bookmark"></i></div>
+                <h3>Regulasi & Kebijakan</h3>
+                <p>Kumpulan aturan administrasi, kebijakan internal, dan tata tertib karyawan yang berlaku.</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="row">
+            <div class="col-lg-4 border-end-lg mb-4 mb-lg-0">
+                <span class="label-small">Kategori Sistem</span>
+                <div class="d-flex flex-wrap gap-2">
+                    @if (!string.IsNullOrEmpty(Model.Skills)) {
+                        foreach (var skill in Model.Skills.Split(',')) {
+                            <span class="tag">@skill.Trim()</span>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="col-lg-8 ps-lg-5">
+                <span class="label-small">Visi & Misi Platform</span>
+                <div class="mission-text">
+                    "@Model.AboutMe"
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

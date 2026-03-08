@@ -1,0 +1,227 @@
+@model latihan.Models.Post
+@{
+    ViewData["Title"] = Model.Title;
+    var allDocs = ViewBag.AllDocs as List<latihan.Models.Post>;
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+    :root {
+        --brand-dark: #1e293b;
+        --brand-indigo: #6366f1;
+        --brand-teal: #0d9488;
+        --text-main: #334155;
+        --text-sub: #64748b;
+        --bg-body: #f1f5f9; /* Slate 100 yang menyejukkan */
+        --border-soft: #e2e8f0;
+    }
+
+    body { 
+        background-color: var(--bg-body); 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        color: var(--text-main); 
+        line-height: 1.6;
+    }
+
+    /* --- BREADCRUMB --- */
+    .nav-breadcrumb {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+    .nav-breadcrumb a { 
+        color: var(--brand-indigo); 
+        text-decoration: none; 
+        display: flex; 
+        align-items: center; 
+        gap: 5px;
+    }
+    .nav-breadcrumb a:hover { opacity: 0.8; }
+    .nav-breadcrumb .separator { color: var(--text-sub); opacity: 0.5; }
+    .nav-breadcrumb .current { color: var(--text-sub); font-weight: 500; }
+
+    /* --- MAIN ARTICLE CARD --- */
+    .doc-content-card {
+        background: white;
+        border-radius: 24px;
+        padding: 50px;
+        border: 1px solid var(--border-soft);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+        min-height: 80vh;
+    }
+
+    .doc-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--brand-indigo);
+    }
+
+    .doc-title { 
+        font-weight: 800; 
+        color: var(--brand-dark); 
+        font-size: 2.4rem; 
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+    }
+
+    /* Styling Isi Konten (Html.Raw) */
+    .article-body {
+        line-height: 1.8;
+        font-size: 1.05rem;
+        color: #475569;
+    }
+    .article-body h2, .article-body h3 { 
+        color: var(--brand-dark); 
+        font-weight: 700; 
+        margin-top: 30px; 
+    }
+    .article-body p { margin-bottom: 20px; }
+
+    /* --- SIDEBAR --- */
+    .sticky-sidebar { position: sticky; top: 30px; }
+    
+    .nav-card {
+        background: white;
+        border-radius: 20px;
+        border: 1px solid var(--border-soft);
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-card-header {
+        background: var(--brand-dark);
+        color: white;
+        padding: 18px 25px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .scroll-menu-area {
+        max-height: 400px; 
+        overflow-y: auto;
+    }
+    .scroll-menu-area::-webkit-scrollbar { width: 4px; }
+    .scroll-menu-area::-webkit-scrollbar-thumb { background: var(--border-soft); border-radius: 10px; }
+
+    .nav-link-item {
+        display: flex;
+        align-items: center;
+        padding: 15px 25px;
+        color: var(--text-main);
+        text-decoration: none;
+        border-bottom: 1px solid var(--bg-body);
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: 0.2s;
+    }
+
+    .nav-link-item i { 
+        margin-right: 12px; 
+        font-size: 1.1rem; 
+        color: var(--text-sub);
+        opacity: 0.6;
+    }
+
+    .nav-link-item:hover { background: var(--bg-body); color: var(--brand-indigo); }
+
+    .nav-link-item.active {
+        background: #f5f3ff; /* Indigo tint */
+        color: var(--brand-indigo);
+        border-right: 4px solid var(--brand-indigo);
+    }
+    .nav-link-item.active i { color: var(--brand-indigo); opacity: 1; }
+
+    .text-truncate-side { 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap; 
+    }
+
+    .info-box-sidebar {
+        margin-top: 15px;
+        padding: 15px;
+        background: rgba(99, 102, 241, 0.05);
+        border-radius: 15px;
+        border: 1px dashed var(--brand-indigo);
+        text-align: center;
+        color: var(--brand-indigo);
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    @@media (max-width: 991px) {
+        .doc-content-card { padding: 30px; }
+        .doc-title { font-size: 1.8rem; }
+    }
+</style>
+
+<div class="container pb-5">
+    <nav class="nav-breadcrumb">
+        <a href="/Docs"><i class="bi bi-arrow-left-short" style="font-size: 1.4rem;"></i> Katalog</a>
+        <span class="separator">/</span>
+        <span class="current">Membaca Dokumen</span>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-8 mb-4">
+            <div class="doc-content-card">
+                <div class="doc-meta">
+                    <span><i class="bi bi-patch-check-fill me-1"></i> Official Document</span>
+                    <span style="color: var(--text-sub)">•</span>
+                    <span style="color: var(--text-sub)"><i class="bi bi-calendar3 me-1"></i> @Model.CreatedAt.ToString("dd MMM yyyy")</span>
+                </div>
+
+                <h1 class="doc-title mb-4">@Model.Title</h1>
+                
+                <div style="height: 2px; width: 60px; background: var(--brand-indigo); margin-bottom: 40px; border-radius: 2px;"></div>
+
+                <div class="article-body">
+                    @Html.Raw(Model.Content)
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="sticky-sidebar">
+                <div class="nav-card">
+                    <div class="nav-card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-list-ul me-2"></i> Materi Terkait</span>
+                        <span class="badge rounded-pill bg-light text-dark">@allDocs?.Count</span>
+                    </div>
+                    
+                    <div class="scroll-menu-area">
+                        <nav class="nav flex-column">
+                            @if (allDocs != null)
+                            {
+                                foreach (var item in allDocs)
+                                {
+                                    <a href="/Docs/Detail/@item.Id" class="nav-link-item @(item.Id == Model.Id ? "active" : "")">
+                                        <i class="bi bi-file-earmark-richtext"></i>
+                                        <span class="text-truncate-side">@item.Title</span>
+                                    </a>
+                                }
+                            }
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="info-box-sidebar">
+                    <i class="bi bi-info-circle-fill me-1"></i> Klik judul untuk beralih dokumen dengan cepat.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

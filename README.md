@@ -39,7 +39,7 @@ Ikuti langkah-langkah di bawah ini untuk mengonfigurasi dan menjalankan proyek s
 
    # Sesuaikan Connection String di appsettings.json
    "ConnectionStrings": {
-     "DefaultConnection": "Server=NAMA_SERVER_ANDA;Database=SmiDigitalLibrary;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
+     "DefaultConnection": "Server=NAMA_SERVER_ANDA;Database=my_portfolio;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
    }
 
    # Jalankan Migrasi Database dan Eksekusi Program

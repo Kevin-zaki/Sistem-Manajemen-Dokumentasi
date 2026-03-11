@@ -14,8 +14,22 @@
         --brand-teal: #0d9488;
         --text-main: #334155;
         --text-sub: #64748b;
-        --bg-body: #f1f5f9; /* Slate 100 yang menyejukkan */
+        --bg-body: #f1f5f9;
         --border-soft: #e2e8f0;
+        --card-bg: #ffffff;
+        --nav-active-bg: #f5f3ff;
+    }
+
+    /* Penyesuaian Dark Mode */
+    [data-bs-theme="dark"] {
+        --brand-dark: #f8fafc;
+        --brand-indigo: #818cf8;
+        --text-main: #cbd5e1;
+        --text-sub: #94a3b8;
+        --bg-body: #020617;
+        --border-soft: #1e293b;
+        --card-bg: #0f172a;
+        --nav-active-bg: rgba(99, 102, 241, 0.1);
     }
 
     body { 
@@ -23,6 +37,7 @@
         font-family: 'Plus Jakarta Sans', sans-serif; 
         color: var(--text-main); 
         line-height: 1.6;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* --- BREADCRUMB --- */
@@ -47,12 +62,13 @@
 
     /* --- MAIN ARTICLE CARD --- */
     .doc-content-card {
-        background: white;
+        background: var(--card-bg);
         border-radius: 24px;
         padding: 50px;
         border: 1px solid var(--border-soft);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
         min-height: 80vh;
+        transition: all 0.3s ease;
     }
 
     .doc-meta {
@@ -79,7 +95,7 @@
     .article-body {
         line-height: 1.8;
         font-size: 1.05rem;
-        color: #475569;
+        color: var(--text-main);
     }
     .article-body h2, .article-body h3 { 
         color: var(--brand-dark); 
@@ -92,21 +108,28 @@
     .sticky-sidebar { position: sticky; top: 30px; }
     
     .nav-card {
-        background: white;
+        background: var(--card-bg);
         border-radius: 20px;
         border: 1px solid var(--border-soft);
         overflow: hidden;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease;
     }
 
     .nav-card-header {
         background: var(--brand-dark);
-        color: white;
+        color: var(--bg-body); /* Kontras dengan background header */
         padding: 18px 25px;
         font-weight: 700;
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 1px;
+    }
+
+    /* Memastikan teks header tetap putih di mode gelap agar terbaca */
+    [data-bs-theme="dark"] .nav-card-header {
+        color: #ffffff;
+        background: #111827;
     }
 
     .scroll-menu-area {
@@ -122,7 +145,7 @@
         padding: 15px 25px;
         color: var(--text-main);
         text-decoration: none;
-        border-bottom: 1px solid var(--bg-body);
+        border-bottom: 1px solid var(--border-soft);
         font-weight: 600;
         font-size: 0.85rem;
         transition: 0.2s;
@@ -138,7 +161,7 @@
     .nav-link-item:hover { background: var(--bg-body); color: var(--brand-indigo); }
 
     .nav-link-item.active {
-        background: #f5f3ff; /* Indigo tint */
+        background: var(--nav-active-bg);
         color: var(--brand-indigo);
         border-right: 4px solid var(--brand-indigo);
     }

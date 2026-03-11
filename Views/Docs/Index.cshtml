@@ -16,12 +16,30 @@
         --text-elegant: #334155;
         --bg-body: #f1f5f9;
         --border-soft: #e2e8f0;
+        --card-bg: #ffffff;
+        --search-bg: #ffffff;
+        --hero-bg: #ffffff;
+        --dot-color: #cbd5e1;
+    }
+
+    [data-bs-theme="dark"] {
+        --brand-dark: #f8fafc;
+        --brand-indigo: #818cf8;
+        --brand-slate: #64748b;
+        --text-elegant: #cbd5e1;
+        --bg-body: #020617;
+        --border-soft: #1e293b;
+        --card-bg: #0f172a;
+        --search-bg: #1e293b;
+        --hero-bg: #020617;
+        --dot-color: #1e293b;
     }
 
     body { 
         background-color: var(--bg-body); 
         font-family: 'Plus Jakarta Sans', sans-serif; 
         color: var(--text-elegant);
+        transition: background-color 0.3s ease;
     }
 
     .compact-container {
@@ -32,10 +50,10 @@
 
     /* --- HERO SECTION --- */
     .hero-section {
-        background-color: #ffffff;
+        background-color: var(--hero-bg);
         padding: 60px 0 65px;
         border-bottom: 1px solid var(--border-soft);
-        background-image: radial-gradient(#cbd5e1 0.8px, transparent 0.8px);
+        background-image: radial-gradient(var(--dot-color) 0.8px, transparent 0.8px);
         background-size: 24px 24px;
     }
 
@@ -59,7 +77,8 @@
         border-radius: 16px;
         padding: 16px 20px 16px 60px;
         font-size: 0.95rem;
-        background: white;
+        background: var(--search-bg);
+        color: var(--brand-dark);
         box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
         transition: all 0.3s ease;
     }
@@ -79,15 +98,10 @@
     }
 
     /* --- CARD DESIGN --- */
-    .doc-card-item {
-        opacity: 0;
-        animation: cardAppear 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    }
-
     .card-doc-elegant {
         border: 1px solid var(--border-soft);
         border-radius: 24px;
-        background: white;
+        background: var(--card-bg);
         transition: all 0.4s ease;
         padding: 30px;
         height: 100%;
@@ -98,7 +112,7 @@
     .card-doc-elegant:hover {
         transform: translateY(-8px);
         border-color: var(--brand-indigo);
-        box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+        box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
     }
 
     .category-label {
@@ -107,8 +121,9 @@
         color: var(--brand-indigo);
         margin-bottom: 15px;
         display: flex; align-items: center; gap: 8px;
-        background: #f5f3ff; width: fit-content;
+        background: rgba(99, 102, 241, 0.1); 
         padding: 4px 12px; border-radius: 8px;
+        width: fit-content;
     }
 
     .doc-title-elegant {
@@ -118,7 +133,47 @@
         overflow: hidden; min-height: 3.2em; 
     }
 
-    /* --- ANIMATIONS (Fix Error @@) --- */
+    .doc-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-soft);
+    }
+
+    .doc-link {
+        text-decoration: none;
+        color: var(--brand-dark);
+        font-weight: 700;
+        font-size: 0.75rem;
+    }
+
+    .doc-link:hover { color: var(--brand-indigo); }
+
+    /* --- PAGINATION --- */
+    .pagination .page-link {
+        background-color: var(--card-bg);
+        border-color: var(--border-soft);
+        color: var(--brand-indigo);
+        border-radius: 10px;
+        margin: 0 3px;
+        font-weight: 600;
+        padding: 8px 16px;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: var(--brand-indigo);
+        border-color: var(--brand-indigo);
+        color: white;
+    }
+
+    /* --- ANIMATIONS --- */
+    .doc-card-item {
+        opacity: 0;
+        animation: cardAppear 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
     @@keyframes cardAppear {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -132,10 +187,6 @@
     @@keyframes spin {
         from { transform: translateY(-50%) rotate(0deg); }
         to { transform: translateY(-50%) rotate(360deg); }
-    }
-
-    #searchResultArea {
-        transition: opacity 0.3s ease;
     }
 </style>
 
@@ -155,13 +206,13 @@
     </form>
 
     <div id="searchResultArea">
-        <div class="row g-4 mb-4" id="docGrid">
-            @if (!Model.Any()) {
+        <div class="row g-4 mb-5" id="docGrid">
+            @if (Model == null || !Model.Any()) {
                 <div class="col-12 text-center py-5">
-                    <div class="py-5" style="background: white; border-radius: 24px; border: 2px dashed var(--border-soft);">
+                    <div class="card-doc-elegant border-dashed justify-content-center align-items-center py-5" style="border: 2px dashed var(--border-soft); background: transparent;">
                         <i class="bi bi-search" style="font-size: 3rem; color: var(--brand-slate);"></i>
                         <p class="mt-3 fw-600" style="color: var(--brand-slate);">
-                            @(string.IsNullOrEmpty(currentFilter) ? "Belum ada dokumen." : $"Hasil untuk '{currentFilter}' tidak ditemukan.")
+                            @(string.IsNullOrEmpty(currentFilter) ? "Belum ada dokumen tersedia." : $"Hasil untuk '{currentFilter}' tidak ditemukan.")
                         </p>
                     </div>
                 </div>
@@ -171,14 +222,14 @@
                         <div class="card-doc-elegant">
                             <span class="category-label"><i class="bi bi-shield-check"></i> Terverifikasi</span>
                             <h5 class="doc-title-elegant">@item.Title</h5>
-                            <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 25px;">
-                                Pedoman standar operasional mengenai @item.Title.
+                            <p class="text-muted small" style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 25px;">
+                                Pedoman standar operasional mengenai @item.Title untuk efisiensi produksi.
                             </p>
-                            <div class="d-flex justify-content-between align-items-center mt-auto pt-4 border-top">
+                            <div class="doc-footer">
                                 <div style="font-size: 0.75rem; color: var(--brand-slate); font-weight: 600;">
                                     <i class="bi bi-clock-history"></i> @item.CreatedAt.ToString("MMM yyyy")
                                 </div>
-                                <a asp-action="Details" asp-route-id="@item.Id" style="text-decoration:none; color:var(--brand-dark); font-weight:700; font-size:0.75rem;">
+                                <a asp-action="Details" asp-route-id="@item.Id" class="doc-link">
                                     BUKA <i class="bi bi-arrow-right-short" style="font-size: 1.2rem;"></i>
                                 </a>
                             </div>
@@ -188,14 +239,50 @@
             }
         </div>
 
+        @* --- PAGINATION DENGAN LIMIT TAMPILAN (HANYA 3 HALAMAN) --- *@
         @if (totalPages > 1) {
             <nav class="mb-5">
-                <ul class="pagination justify-content-end">
-                    @for (int i = 1; i <= totalPages; i++) {
+                <ul class="pagination justify-content-center">
+                    @* Tombol Previous *@
+                    <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" href="?page=@(currentPage - 1)&searchString=@currentFilter"><i class="bi bi-chevron-left"></i></a>
+                    </li>
+
+                    @{
+                        // Setting hanya 3 halaman yang tampil
+                        int maxVisiblePages = 3; 
+                        int startPage = Math.Max(1, currentPage - (maxVisiblePages / 2));
+                        int endPage = Math.Min(totalPages, startPage + maxVisiblePages - 1);
+
+                        // Koreksi jika startPage terlalu besar di akhir halaman
+                        if (endPage - startPage < maxVisiblePages - 1) {
+                            startPage = Math.Max(1, endPage - maxVisiblePages + 1);
+                        }
+                    }
+
+                    @* Link Halaman Pertama jika startPage > 1 *@
+                    @if (startPage > 1) {
+                        <li class="page-item"><a class="page-link" href="?page=1&searchString=@currentFilter">1</a></li>
+                        @if (startPage > 2) { <li class="page-item disabled"><span class="page-link">...</span></li> }
+                    }
+
+                    @* Looping Nomor Halaman (Maksimal 3) *@
+                    @for (int i = startPage; i <= endPage; i++) {
                         <li class="page-item @(i == currentPage ? "active" : "")">
-                            <a class="page-link ajax-page-link" href="?page=@i&searchString=@currentFilter">@i</a>
+                            <a class="page-link" href="?page=@i&searchString=@currentFilter">@i</a>
                         </li>
                     }
+
+                    @* Link Halaman Terakhir jika endPage < totalPages *@
+                    @if (endPage < totalPages) {
+                        @if (endPage < totalPages - 1) { <li class="page-item disabled"><span class="page-link">...</span></li> }
+                        <li class="page-item"><a class="page-link" href="?page=@totalPages&searchString=@currentFilter">@totalPages</a></li>
+                    }
+
+                    @* Tombol Next *@
+                    <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                        <a class="page-link" href="?page=@(currentPage + 1)&searchString=@currentFilter"><i class="bi bi-chevron-right"></i></a>
+                    </li>
                 </ul>
             </nav>
         }
@@ -210,60 +297,42 @@
         const resultArea = document.getElementById('searchResultArea');
         let timer;
 
-        // Fungsi Cari via AJAX (Sangat Ringan)
         async function doSearch() {
             const query = searchInput.value;
             const url = `@Url.Action("Index")?searchString=${encodeURIComponent(query)}`;
-
-            // Efek Loading Transparan
             resultArea.style.opacity = '0.5';
 
             try {
                 const response = await fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
                 const text = await response.text();
-                
-                // Ambil konten baru dan ganti
                 const parser = new DOMParser();
                 const htmlDoc = parser.parseFromString(text, 'text/html');
                 const newHtml = htmlDoc.getElementById('searchResultArea').innerHTML;
                 
                 resultArea.innerHTML = newHtml;
-                
-                // Update URL tanpa reload
                 window.history.pushState({}, '', url);
-                
             } catch (err) {
                 console.error("Gagal memuat:", err);
             } finally {
                 resultArea.style.opacity = '1';
-                statusIcon.classList.replace('bi-arrow-repeat', 'bi-search');
-                statusIcon.classList.remove('searching-loader');
+                statusIcon.className = 'bi bi-search search-icon-elegant';
                 initCardAnimations();
             }
         }
 
         searchInput.addEventListener('input', () => {
-            // Animasi Ikon
-            statusIcon.classList.replace('bi-search', 'bi-arrow-repeat');
-            statusIcon.classList.add('searching-loader');
-
+            statusIcon.className = 'bi bi-arrow-repeat search-icon-elegant searching-loader';
             clearTimeout(timer);
-            timer = setTimeout(doSearch, 400); // Tunggu 400ms setelah mengetik
+            timer = setTimeout(doSearch, 400);
         });
 
-        // Mencegah reload saat tekan Enter
-        searchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            doSearch();
-        });
+        searchForm.addEventListener('submit', (e) => { e.preventDefault(); doSearch(); });
 
         function initCardAnimations() {
-            const cards = document.querySelectorAll('.doc-card-item');
-            cards.forEach((card, index) => {
+            document.querySelectorAll('.doc-card-item').forEach((card, index) => {
                 card.style.animationDelay = `${index * 0.05}s`;
             });
         }
-
         window.addEventListener('DOMContentLoaded', initCardAnimations);
     </script>
-}
+}   

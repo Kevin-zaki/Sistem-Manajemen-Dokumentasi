@@ -14,23 +14,66 @@
         --brand-indigo: #6366f1;
         --border-soft: #e2e8f0;
         --card-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+        --table-bg: #ffffff;
+        --table-head: #f8fafc;
+        --control-bg: #ffffff;
+        --input-bg: #f8fafc;
+        --text-main: #334155;
+        --btn-create-bg: #ffffff;
+        --btn-create-text: #0f172a;
+    }
+
+    [data-bs-theme="dark"] {
+        --bg-body: #020617;
+        --brand-dark: #f8fafc;
+        --brand-indigo: #818cf8;
+        --border-soft: #1e293b;
+        --card-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);
+        --table-bg: #0f172a;
+        --table-head: #1e293b;
+        --control-bg: #0f172a;
+        --input-bg: #1e293b;
+        --text-main: #cbd5e1;
+        --btn-create-bg: var(--brand-indigo);
+        --btn-create-text: #ffffff;
     }
 
     body { 
         background-color: var(--bg-body); 
         font-family: 'Plus Jakarta Sans', sans-serif; 
-        color: #334155; 
+        color: var(--text-main); 
+        transition: all 0.3s ease;
     }
 
     /* --- HEADER --- */
     .main-header { 
-        background-color: var(--brand-dark); 
+        background-color: #0f172a; 
         color: #f8fafc; 
         padding: 60px 0 100px 0; 
         border-radius: 0 0 40px 40px;
         position: relative;
         background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
         background-size: 20px 20px;
+    }
+
+    [data-bs-theme="dark"] .main-header {
+        background-color: #000000;
+        border-bottom: 1px solid var(--border-soft);
+    }
+
+    /* Tombol Buat Dokumen Adaptive */
+    .btn-create-doc {
+        background-color: var(--btn-create-bg);
+        color: var(--btn-create-text);
+        transition: all 0.3s ease;
+        border: none;
+    }
+
+    .btn-create-doc:hover {
+        background-color: var(--btn-create-bg);
+        opacity: 0.9;
+        transform: translateY(-2px);
+        color: var(--btn-create-text);
     }
 
     /* --- STAT CARDS --- */
@@ -58,9 +101,9 @@
         font-size: 1.5rem;
     }
 
-    /* --- REFINED SEARCH & FILTER (Pojok Kanan Fit) --- */
+    /* --- REFINED SEARCH & FILTER --- */
     .control-container {
-        background: white;
+        background: var(--control-bg);
         border-radius: 20px;
         padding: 10px 15px;
         margin-top: 35px;
@@ -88,7 +131,7 @@
 
     .search-input {
         width: 100%;
-        background: #f8fafc;
+        background: var(--input-bg);
         border: none;
         border-radius: 14px;
         height: 48px;
@@ -100,16 +143,15 @@
     }
 
     .search-input:focus {
-        background: #f1f5f9;
         box-shadow: inset 0 0 0 2px var(--brand-indigo);
     }
 
     .filter-toggle-group {
         display: flex;
-        background: #f1f5f9;
+        background: var(--input-bg);
         padding: 5px;
         border-radius: 14px;
-        flex-shrink: 0; /* Mencegah filter mengecil */
+        flex-shrink: 0;
     }
 
     .filter-btn {
@@ -125,20 +167,55 @@
     }
 
     .filter-btn.active {
-        background: white;
+        background: var(--control-bg);
         color: var(--brand-indigo);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     /* --- TABLE --- */
-    .table-container { background: white; border-radius: 24px; box-shadow: var(--card-shadow); margin-top: 25px; overflow: hidden; border: 1px solid var(--border-soft); margin-bottom: 50px; }
+    .table-container { 
+        background: var(--table-bg); 
+        border-radius: 24px; 
+        box-shadow: var(--card-shadow); 
+        margin-top: 25px; 
+        overflow: hidden; 
+        border: 1px solid var(--border-soft); 
+        margin-bottom: 50px; 
+    }
     .scroll-wrapper { max-height: 650px; overflow-y: auto; }
-    .table thead th { background-color: #f8fafc; color: #64748b; font-size: 0.75rem; text-transform: uppercase; padding: 20px; position: sticky; top: 0; z-index: 5; }
+    .table thead th { 
+        background-color: var(--table-head); 
+        color: #64748b; 
+        font-size: 0.75rem; 
+        text-transform: uppercase; 
+        padding: 20px; 
+        position: sticky; 
+        top: 0; 
+        z-index: 5; 
+        border-bottom: 1px solid var(--border-soft);
+    }
     
-    .meta-pill { display: inline-flex; align-items: center; padding: 4px 12px; background-color: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.75rem; font-weight: 600; color: #64748b; }
+    .table td { border-bottom: 1px solid var(--border-soft); color: var(--text-main); }
+
+    .meta-pill { 
+        display: inline-flex; 
+        align-items: center; 
+        padding: 4px 12px; 
+        background-color: var(--input-bg); 
+        border: 1px solid var(--border-soft); 
+        border-radius: 8px; 
+        font-size: 0.75rem; 
+        font-weight: 600; 
+        color: var(--text-main); 
+    }
+    
     .status-pill { font-size: 0.7rem; font-weight: 800; padding: 6px 12px; border-radius: 8px; text-transform: uppercase; }
     
     .btn-action { width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; transition: 0.2s; border: none; text-decoration: none; }
+    
+    [data-bs-theme="dark"] .text-dark { color: #f8fafc !important; }
+    [data-bs-theme="dark"] .text-muted { color: #94a3b8 !important; }
+    [data-bs-theme="dark"] .bg-light { background-color: #1e293b !important; color: #94a3b8 !important; }
 </style>
 
 <div class="main-header">
@@ -152,7 +229,7 @@
                 <a asp-action="EditProfile" class="btn btn-outline-light px-4 rounded-pill btn-sm fw-600 border-opacity-25">
                     <i class="bi bi-person-circle me-2"></i>Profil
                 </a>
-                <a asp-action="CreatePost" class="btn btn-light px-4 rounded-pill btn-sm fw-800 text-dark shadow-sm">
+                <a asp-action="CreatePost" class="btn btn-create-doc px-4 rounded-pill btn-sm fw-800 shadow-sm">
                     <i class="bi bi-plus-lg me-2"></i>Buat Dokumen
                 </a>
             </div>
@@ -224,7 +301,7 @@
                                     <div class="fw-800 text-dark doc-title mb-2">@item.Title</div>
                                     <div class="d-flex flex-wrap gap-2">
                                         <div class="meta-pill"><i class="bi bi-hash"></i><span class="doc-id">@item.Id</span></div>
-                                        <div class="meta-pill"><i class="bi bi-calendar3"></i>@item.CreatedAt.ToString("dd MMM yyyy")</div>
+                                        <div class="meta-pill"><i class="bi "></i><i></i>@item.CreatedAt.ToString("dd MMM yyyy")</div>
                                     </div>
                                 </td>
                                 <td class="text-center">
@@ -300,6 +377,7 @@
 
         document.querySelectorAll('.btn-delete').forEach(button => {
             button.addEventListener('click', function() {
+                const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
                 const form = this.closest('.form-delete');
                 Swal.fire({
                     title: 'Hapus Dokumen?',
@@ -309,6 +387,8 @@
                     confirmButtonColor: '#ef4444',
                     cancelButtonColor: '#64748b',
                     confirmButtonText: 'Ya, Hapus',
+                    background: isDark ? '#0f172a' : '#ffffff',
+                    color: isDark ? '#f8fafc' : '#0f172a',
                     customClass: { popup: 'rounded-4' }
                 }).then((result) => { if (result.isConfirmed) form.submit(); });
             });

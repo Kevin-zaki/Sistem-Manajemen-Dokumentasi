@@ -3,56 +3,60 @@
   "WorkspaceRootPath": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\CreatePost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\CreatePost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditProfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\EditProfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\FilesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\FilesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Docs\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Docs\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\DocsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\DocsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditPost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\EditPost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Docs\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Docs\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\AdminController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AdminController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditProfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\EditProfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\CreatePost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\CreatePost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditPost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\EditPost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\AdminController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AdminController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\DocsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\DocsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\FilesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\FilesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Models\\ProfileModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\ProfileModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Data\\ApplicationDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -118,13 +118,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-05T14:16:50.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Docs\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Docs\\Index.cshtml",
               "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Docs\\Index.cshtml",
               "RelativeToolTip": "Views\\Docs\\Index.cshtml",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAcwAwBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAkwFEBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-05T13:47:41.294Z",
               "EditorCaption": ""
@@ -132,30 +145,136 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DocsController.cs",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\DocsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DocsController.cs",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\DocsController.cs",
-              "RelativeToolTip": "Controllers\\DocsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T13:45:11.822Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Docs\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Docs\\Details.cshtml",
               "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Docs\\Details.cshtml",
               "RelativeToolTip": "Views\\Docs\\Details.cshtml",
-              "ViewState": "AgIAALcAAAAAAAAAAAAYwOIAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-05T13:47:57.244Z"
+              "WhenOpened": "2026-03-05T13:47:57.244Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAABwBAAAAAAAAAAArwDEBAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T14:05:46.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditProfile.cshtml",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditProfile.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\EditProfile.cshtml",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditProfile.cshtml",
+              "RelativeToolTip": "Views\\Admin\\EditProfile.cshtml",
+              "ViewState": "AgIAAEkBAAAAAAAAAAAmwGQBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T13:46:47.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreatePost.cshtml",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\CreatePost.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\CreatePost.cshtml",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\CreatePost.cshtml",
+              "RelativeToolTip": "Views\\Admin\\CreatePost.cshtml",
+              "ViewState": "AgIAACYBAAAAAAAAAAAuwEMBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T13:46:22.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAIBAAAAAAAAAAAuwB8BAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T14:12:24.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditPost.cshtml",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditPost.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\EditPost.cshtml",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditPost.cshtml",
+              "RelativeToolTip": "Views\\Admin\\EditPost.cshtml",
+              "ViewState": "AgIAACABAAAAAAAAAAAkwDsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T13:47:11.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAwwDMBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T14:10:51.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T14:15:29.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T13:49:17.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DocsController.cs",
+              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\DocsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocsController.cs",
+              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\DocsController.cs",
+              "RelativeToolTip": "Controllers\\DocsController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T13:45:11.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "FilesController.cs",
               "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\FilesController.cs",
               "RelativeDocumentMoniker": "Controllers\\FilesController.cs",
@@ -163,97 +282,11 @@
               "RelativeToolTip": "Controllers\\FilesController.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAiwE8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T13:45:35.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T13:45:35.221Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreatePost.cshtml",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\CreatePost.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\CreatePost.cshtml",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\CreatePost.cshtml",
-              "RelativeToolTip": "Views\\Admin\\CreatePost.cshtml",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAAAOYAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-05T13:46:22.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAowIwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T13:49:17.697Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EditProfile.cshtml",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditProfile.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\EditProfile.cshtml",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditProfile.cshtml",
-              "RelativeToolTip": "Views\\Admin\\EditProfile.cshtml",
-              "ViewState": "AgIAADEBAAAAAAAAAAAowEoBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-05T13:46:47.141Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAOMAAAAAAAAAAAAYwA4BAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-05T14:10:51.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EditPost.cshtml",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditPost.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\EditPost.cshtml",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\EditPost.cshtml",
-              "RelativeToolTip": "Views\\Admin\\EditPost.cshtml",
-              "ViewState": "AgIAAAsBAAAAAAAAAAAowCQBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-05T13:47:11.388Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Dashboard.cshtml",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\Dashboard.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Dashboard.cshtml",
-              "ViewState": "AgIAACMBAAAAAAAAAAAowDwBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-05T14:05:46.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAANgAAAAAAAAAAAAqwPEAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-05T14:12:24.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "login.cshtml",
               "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Views\\Admin\\login.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\login.cshtml",
@@ -265,19 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowDEAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T14:15:29.366Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -289,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "ProfileModel.cs",
               "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\Models\\ProfileModel.cs",
               "RelativeDocumentMoniker": "Models\\ProfileModel.cs",
@@ -298,18 +319,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T13:44:23.305Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\KULIAH\\magang\\Testing\\Sistem-Manajemen-Dokumentasi\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-05T14:16:50.283Z"
             },
             {
               "$type": "Document",

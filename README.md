@@ -35,8 +35,7 @@ Ikuti langkah-langkah di bawah ini untuk mengonfigurasi dan menjalankan proyek s
 1. **Persiapan Project & Database**
    ```bash
    # Clone dan masuk ke folder
-   git clone [https://github.com/username-anda/latihan-smi.git](https://github.com/username-anda/latihan-smi.git)
-   cd latihan-smi
+   git clone [https://github.com/Kevin-zaki/Sistem-Manajemen-Dokumentasi.git]
 
    # Sesuaikan Connection String di appsettings.json
    "ConnectionStrings": {

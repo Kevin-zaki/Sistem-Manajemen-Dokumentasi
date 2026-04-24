@@ -14,6 +14,22 @@
         --bg-body: #f1f5f9;
         --card-bg: #ffffff;
         --input-bg: #f8fafc;
+        --editor-bg: #ffffff;
+        --toolbar-bg: #f8fafc;
+    }
+
+    /* Sinkronisasi Dark Mode */
+    [data-bs-theme="dark"] {
+        --brand-dark: #f8fafc;
+        --brand-indigo: #818cf8;
+        --text-elegant: #cbd5e1;
+        --text-sub: #94a3b8;
+        --border-soft: #1e293b;
+        --bg-body: #020617;
+        --card-bg: #0f172a;
+        --input-bg: #1e293b;
+        --editor-bg: #0f172a;
+        --toolbar-bg: #1e293b;
     }
 
     body {
@@ -21,6 +37,7 @@
         font-family: 'Plus Jakarta Sans', sans-serif;
         color: var(--text-elegant);
         letter-spacing: -0.01em;
+        transition: all 0.3s ease;
     }
 
     .form-container { 
@@ -32,17 +49,22 @@
         background: var(--card-bg);
         border: 1px solid var(--border-soft);
         border-radius: 20px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         overflow: hidden;
     }
 
     .card-header-custom {
-        background: var(--brand-dark);
+        background: #1e293b; /* Tetap gelap solid agar header terlihat tegas */
         padding: 24px 35px;
         color: #f1f5f9;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    [data-bs-theme="dark"] .card-header-custom {
+        background: #111827;
+        border-bottom: 1px solid var(--border-soft);
     }
 
     .card-header-custom h6 {
@@ -89,11 +111,11 @@
         width: 100%;
         background: var(--input-bg);
         transition: all 0.2s ease;
-        color: var(--brand-dark);
+        color: var(--brand-dark); /* Mengikuti teks utama di darkmode */
     }
 
     .custom-input:focus {
-        background: white;
+        background: var(--card-bg);
         border-color: var(--brand-indigo);
         box-shadow: none;
         outline: none;
@@ -108,7 +130,7 @@
         border: 2px solid var(--border-soft);
         border-radius: 12px;
         overflow: hidden;
-        background: white;
+        background: var(--editor-bg);
         transition: 0.3s ease;
     }
 
@@ -117,7 +139,7 @@
     }
 
     .editor-toolbar {
-        background: #f8fafc;
+        background: var(--toolbar-bg);
         padding: 8px 12px;
         border-bottom: 1px solid var(--border-soft);
         display: flex; 
@@ -156,12 +178,13 @@
         outline: none; 
         font-size: 0.95rem;
         line-height: 1.6;
-        color: var(--brand-dark);
+        color: var(--text-elegant);
+        background: var(--editor-bg);
     }
 
     /* --- BUTTONS --- */
     .btn-save {
-        background: var(--brand-dark);
+        background: var(--brand-indigo); /* Menggunakan indigo agar menonjol di darkmode */
         color: white;
         border: none;
         padding: 12px 28px;
@@ -175,9 +198,9 @@
     }
 
     .btn-save:hover { 
-        background: #000; 
+        opacity: 0.9; 
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
     }
 
     .btn-cancel {
@@ -190,15 +213,14 @@
         font-weight: 600;
         color: var(--text-sub);
         text-decoration: none;
-        background: #ffffff;
+        background: var(--card-bg);
         border: 1px solid var(--border-soft);
         transition: 0.2s;
     }
 
     .btn-cancel:hover {
-        background: #f1f5f9;
-        color: var(--brand-dark);
-        border-color: #cbd5e1;
+        background: var(--input-bg);
+        color: var(--brand-indigo);
     }
 
     .form-text-custom {
@@ -308,23 +330,27 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    // Fungsi untuk menjalankan perintah format teks
     function execCmd(cmd) {
         document.execCommand(cmd, false, null);
         document.getElementById('editor').focus();
     }
 
-    // Sinkronisasi konten editor ke input hidden sebelum submit
     document.getElementById('profileForm').onsubmit = function() {
         const editor = document.getElementById('editor');
         const hiddenInput = document.getElementById('AboutMeInput');
+        const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
         
-        // Pindahkan isi HTML ke hidden input agar terikat ke Model.AboutMe
         hiddenInput.value = editor.innerHTML;
         
-        // Validasi minimal (opsional)
         if (editor.innerText.trim() === "") {
-            Swal.fire('Perhatian', 'Deskripsi Visi & Misi tidak boleh kosong', 'warning');
+            Swal.fire({
+                title: 'Perhatian', 
+                text: 'Deskripsi Visi & Misi tidak boleh kosong', 
+                icon: 'warning',
+                background: isDark ? '#0f172a' : '#fff',
+                color: isDark ? '#fff' : '#000',
+                confirmButtonColor: '#6366f1'
+            });
             return false;
         }
     };

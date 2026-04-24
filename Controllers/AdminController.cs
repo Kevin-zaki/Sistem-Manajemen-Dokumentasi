@@ -87,6 +87,8 @@ namespace latihan.Controllers
         public IActionResult CreatePost(Post post)
         {
             if (string.IsNullOrEmpty(post.ThumbnailUrl)) post.ThumbnailUrl = "";
+
+            post.IsActive = true;
             if (ModelState.IsValid)
             {
                 post.CreatedAt = DateTime.Now;
